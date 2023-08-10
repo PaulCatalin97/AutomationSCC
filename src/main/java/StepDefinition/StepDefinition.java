@@ -9,8 +9,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 
-import java.awt.datatransfer.StringSelection;
 
 public class StepDefinition {
     ChromeDriver driver;
@@ -42,6 +42,17 @@ public class StepDefinition {
 
     }
 
+    @And("hover over button {string}")
+    public void hover(String hoverButton) throws InterruptedException {
+        By buttonlocator = locatori.numeButon(hoverButton);
+        WebElement element = driver.findElement(buttonlocator);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+        Thread.sleep(5000);
+        String expectedText = "I am shown when someone hovers over the text above.";
+        String actualText = driver.findElement(By.xpath("/html/body/div/div/div[3]")).getText();
+        if(!expectedText.equals(actualText)) throw new AssertionError("Mesajul nu este corect");
+    }
 
     @And("Close Browser")
     public void inchideBrowser() {

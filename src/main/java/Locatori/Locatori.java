@@ -38,8 +38,8 @@ public class Locatori {
             case "Mouse Hover":
                 return By.id("mouse-hover");
 
-            case "Btn hover":
-                return By.id(" button-hover-over");
+            case "Hover over me":
+                return By.id("button-hover-over");
 
 
             default:
