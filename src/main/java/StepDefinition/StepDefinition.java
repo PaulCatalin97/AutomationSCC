@@ -35,12 +35,21 @@ public class StepDefinition {
     }
 
     @And("Complete field {string} with value {string}")
-        public void completeazaField (String numecamp, String value ){
-            By fieldlocator = locatori.numeField(numecamp);
-            WebElement element = driver.findElement(fieldlocator);
-            element.sendKeys(value);
-
-        }
+    public void completeazaField(String numecamp, String value) {
+        By fieldlocator = locatori.numeField(numecamp);
+        WebElement element = driver.findElement(fieldlocator);
+        element.sendKeys(value);
 
     }
+
+
+    @And("Close Browser")
+    public void inchideBrowser() {
+        driver.quit();
+    }
+
+
+}
+
+
 

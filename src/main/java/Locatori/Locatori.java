@@ -48,7 +48,6 @@ public class Locatori {
             case "Pass":
                 return By.id("password");
 
-
             default:
                 throw new IllegalArgumentException("Nu exista acest field.");
         }
