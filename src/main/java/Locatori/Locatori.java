@@ -32,6 +32,15 @@ public class Locatori {
             case "Submit":
                 return By.id("submitLoginBtn");
 
+            case "Btnactions":
+                return By.id("actions");
+
+            case "Mouse Hover":
+                return By.id("mouse-hover");
+
+            case "Btn hover":
+                return By.id(" button-hover-over");
+
 
             default:
                 throw new IllegalArgumentException("Nu exista acest buton.");
